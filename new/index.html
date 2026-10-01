@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Новый горизонт — современный дизайн главной</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#f7f6f3;
+  --ink:#14171c;
+  --ink-2:#5b6472;
+  --line:#e7e4de;
+  --card:#fff;
+  --accent:#ff5a1f;
+  --accent-dark:#e04a12;
+  --dark:#15181d;
+  --r:22px;
+}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+section{position:relative}
+
+/* ——— шапка ——— */
+header{position:sticky;top:0;z-index:40;background:rgba(247,246,243,.82);backdrop-filter:blur(16px);border-bottom:1px solid rgba(231,228,222,.9)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px 0}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:19px;letter-spacing:-.03em}
+.logo .mk{width:40px;height:40px;border-radius:13px;background:var(--dark);color:#fff;display:grid;place-items:center;font-size:15px;font-weight:800;letter-spacing:-.02em}
+.logo small{display:block;font-size:11px;font-weight:500;color:var(--ink-2);letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
+nav{display:flex;gap:28px;font-size:14.5px;font-weight:500;color:var(--ink-2)}
+nav a{color:inherit;text-decoration:none;transition:color .15s}
+nav a:hover{color:var(--ink)}
+.hd-r{display:flex;align-items:center;gap:18px}
+.hd-tel{text-align:right}
+.hd-tel b{display:block;font-size:17.5px;font-weight:800;letter-spacing:-.02em}
+.hd-tel span{font-size:11.5px;color:var(--ink-2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font:inherit;font-size:15px;font-weight:700;padding:14px 24px;border-radius:14px;border:none;cursor:pointer;background:var(--accent);color:#fff;text-decoration:none;transition:.16s;white-space:nowrap}
+.btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.btn.sm{padding:11px 18px;font-size:14px;border-radius:12px}
+.btn.ghost{background:transparent;color:var(--ink);border:1.6px solid #d8d3cb}
+.btn.ghost:hover{background:#fff;border-color:#bfb8ad}
+.btn.light{background:#fff;color:var(--ink)}
+
+/* ——— первый экран ——— */
+.hero{padding:62px 0 20px}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:40px;padding:8px 16px 8px 10px;font-size:13.5px;font-weight:600;margin-bottom:26px}
+.chip i{width:9px;height:9px;border-radius:50%;background:#1fb55c;box-shadow:0 0 0 4px rgba(31,181,92,.16);display:block}
+h1{font-size:clamp(38px,4.6vw,62px);line-height:1.02;letter-spacing:-.045em;font-weight:800;margin-bottom:22px}
+h1 em{font-style:normal;color:var(--accent)}
+.lead{font-size:18px;line-height:1.6;color:var(--ink-2);max-width:520px;margin-bottom:32px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+.facts{display:grid;grid-template-columns:repeat(3,auto);gap:36px;justify-content:start}
+.fact b{display:block;font-size:30px;font-weight:800;letter-spacing:-.035em;line-height:1}
+.fact span{font-size:13px;color:var(--ink-2);display:block;margin-top:7px;max-width:15ch}
+
+.hero-media{position:relative}
+.hero-photo{border-radius:28px;overflow:hidden;aspect-ratio:4/4.3;box-shadow:0 30px 70px rgba(20,23,28,.18)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.float{position:absolute;background:#fff;border-radius:18px;box-shadow:0 18px 44px rgba(20,23,28,.16);padding:16px 18px}
+.float.one{left:-26px;top:38px;display:flex;align-items:center;gap:13px}
+.float.one .ic{width:40px;height:40px;border-radius:12px;background:#fff3ee;display:grid;place-items:center}
+.float.one b{font-size:14.5px;display:block;letter-spacing:-.01em}
+.float.one span{font-size:12.5px;color:var(--ink-2)}
+.float.two{right:-22px;bottom:34px;width:216px}
+.float.two b{font-size:13px;display:block;margin-bottom:10px;letter-spacing:-.01em}
+.bar{height:7px;background:#efece6;border-radius:6px;overflow:hidden;margin-bottom:9px}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:6px}
+.float.two span{font-size:12px;color:var(--ink-2)}
+
+/* ——— полоса услуг ——— */
+.strip{margin-top:54px;background:var(--dark);border-radius:var(--r);padding:8px;display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.st{padding:22px 20px;border-radius:16px;color:#fff;transition:.16s}
+.st:hover{background:rgba(255,255,255,.07)}
+.st b{display:block;font-size:16px;font-weight:700;margin-bottom:6px;letter-spacing:-.02em}
+.st span{font-size:13px;color:rgba(255,255,255,.55);line-height:1.45}
+
+/* ——— заголовки секций ——— */
+.sec{padding:92px 0 0}
+.sec-h{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:38px;flex-wrap:wrap}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h2{font-size:clamp(28px,3.3vw,44px);line-height:1.08;letter-spacing:-.038em;font-weight:800;max-width:17ch}
+.sec-h p{font-size:16px;color:var(--ink-2);max-width:420px;line-height:1.6}
+
+/* ——— услуги ——— */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.sv{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px 28px 26px;transition:.18s;position:relative;overflow:hidden}
+.sv:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(20,23,28,.09);border-color:#dcd7ce}
+.sv .ic{width:46px;height:46px;border-radius:14px;background:#fff3ee;display:grid;place-items:center;margin-bottom:20px}
+.sv h3{font-size:19.5px;font-weight:700;letter-spacing:-.025em;margin-bottom:9px}
+.sv p{font-size:14.5px;color:var(--ink-2);line-height:1.58;margin-bottom:18px}
+.sv .price{font-size:14px;font-weight:700;display:flex;align-items:baseline;gap:7px;padding-top:16px;border-top:1px solid var(--line)}
+.sv .price small{font-size:12.5px;font-weight:500;color:var(--ink-2)}
+
+/* ——— процесс ——— */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.sp{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px 26px}
+.sp b.num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:11px;background:var(--dark);color:#fff;font-size:14px;font-weight:800;margin-bottom:18px}
+.sp h3{font-size:17px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
+.sp p{font-size:14px;color:var(--ink-2);line-height:1.55}
+
+/* ——— работы ——— */
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.wk{border-radius:var(--r);overflow:hidden;position:relative;aspect-ratio:4/3.1;background:#ddd}
+.wk img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.wk:hover img{transform:scale(1.045)}
+.wk .ov{position:absolute;inset:auto 0 0 0;padding:52px 22px 20px;background:linear-gradient(to top,rgba(14,16,20,.92),rgba(14,16,20,0));color:#fff}
+.wk .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:rgba(255,255,255,.17);backdrop-filter:blur(6px);padding:5px 10px;border-radius:30px;margin-bottom:10px}
+.wk h3{font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:5px}
+.wk p{font-size:13px;color:rgba(255,255,255,.72);line-height:1.45}
+.wk.big{grid-column:span 2;aspect-ratio:auto}
+
+/* ——— доверие ——— */
+.trust{margin-top:92px;background:var(--dark);border-radius:30px;padding:56px 56px 52px;color:#fff;display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.trust h2{color:#fff;margin-bottom:18px}
+.trust p{color:rgba(255,255,255,.6);font-size:16px;line-height:1.65;margin-bottom:30px;max-width:460px}
+.tl{display:flex;gap:14px;padding:15px 0;border-top:1px solid rgba(255,255,255,.1);font-size:15px;line-height:1.5}
+.tl:last-of-type{border-bottom:1px solid rgba(255,255,255,.1)}
+.tl .ck{flex-shrink:0;width:22px;height:22px;border-radius:8px;background:rgba(255,90,31,.22);color:var(--accent);display:grid;place-items:center;font-size:12px;font-weight:800;margin-top:1px}
+.tl b{font-weight:700}
+.tl span{color:rgba(255,255,255,.62)}
+.trust-media{border-radius:22px;overflow:hidden;aspect-ratio:1/1}
+.trust-media img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ——— заявка ——— */
+.cta{margin:92px 0 0;background:var(--card);border:1px solid var(--line);border-radius:30px;padding:54px 56px;display:grid;grid-template-columns:1fr 420px;gap:56px;align-items:center}
+.cta h2{margin-bottom:16px}
+.cta>div>p{font-size:16.5px;color:var(--ink-2);line-height:1.62;max-width:440px}
+.cta .mini{display:flex;gap:28px;margin-top:30px;flex-wrap:wrap}
+.cta .mini div b{display:block;font-size:22px;font-weight:800;letter-spacing:-.03em}
+.cta .mini div span{font-size:13px;color:var(--ink-2)}
+.form{background:var(--bg);border:1px solid var(--line);border-radius:22px;padding:28px}
+.form h3{font-size:19px;font-weight:700;letter-spacing:-.025em;margin-bottom:6px}
+.form>p{font-size:13.5px;color:var(--ink-2);margin-bottom:20px;line-height:1.5}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.pills span{font-size:13px;font-weight:600;border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:9px 13px;cursor:pointer;transition:.14s}
+.pills span.on{background:var(--dark);color:#fff;border-color:var(--dark)}
+.inp{background:#fff;border:1.5px solid var(--line);border-radius:13px;padding:14px 15px;font-size:14.5px;color:#9aa1ab;margin-bottom:10px}
+.form .btn{width:100%;margin-top:6px}
+.fine{font-size:11.5px;color:#9aa1ab;text-align:center;margin-top:12px;line-height:1.5}
+
+/* ——— подвал ——— */
+footer{margin-top:92px;background:var(--dark);color:#fff;padding:56px 0 30px}
+.ft{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.ft .logo{color:#fff;margin-bottom:16px}
+.ft .logo .mk{background:#fff;color:var(--dark)}
+.ft p{font-size:13.5px;color:rgba(255,255,255,.5);line-height:1.6;max-width:260px}
+.ft h4{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px}
+.ft a{display:block;color:rgba(255,255,255,.78);text-decoration:none;font-size:14.5px;margin-bottom:11px}
+.ft a:hover{color:#fff}
+.ft .big{font-size:22px;font-weight:800;letter-spacing:-.025em;margin-bottom:6px;display:block;color:#fff}
+.ft-bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:22px;font-size:13px;color:rgba(255,255,255,.4)}
+
+/* ——— мобильная панель ——— */
+.mob-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:10px 14px;gap:9px}
+.mob-bar .btn{flex:1;padding:14px 10px}
+.burger{display:none;width:44px;height:44px;border-radius:13px;border:1.6px solid #d8d3cb;background:#fff;align-items:center;justify-content:center;flex-direction:column;gap:4px;cursor:pointer}
+.burger i{width:18px;height:2px;background:var(--ink);border-radius:2px;display:block}
+
+@media(max-width:1080px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-media{max-width:520px}
+  .float.one{left:-10px}.float.two{right:-8px}
+  .strip{grid-template-columns:repeat(2,1fr)}
+  .svc,.steps,.works{grid-template-columns:repeat(2,1fr)}
+  .wk.big{grid-column:span 2}
+  .trust,.cta{grid-template-columns:1fr;padding:40px 32px}
+  .ft{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .wrap{padding:0 16px}
+  nav,.hd-tel{display:none}
+  .hd{gap:12px;padding:11px 0}
+  .logo{font-size:16.5px;gap:9px;white-space:nowrap}
+  .logo .mk{width:36px;height:36px;border-radius:11px;font-size:13.5px}
+  .logo small{font-size:9.5px;letter-spacing:.04em;white-space:normal;max-width:150px}
+  header .btn.sm{display:none}
+  .burger{display:flex}
+  .hero{padding:34px 0 10px}
+  .facts{grid-template-columns:1fr 1fr;gap:22px}
+  .strip,.svc,.steps,.works{grid-template-columns:1fr}
+  .wk.big{grid-column:span 1}
+  .sec{padding:60px 0 0}
+  .trust,.cta{padding:32px 20px;gap:30px;border-radius:24px}
+  .form{padding:22px 18px}
+  .ft{grid-template-columns:1fr;gap:28px}
+  .mob-bar{display:flex}
+  body{padding-bottom:74px}
+  .float.one{left:8px;top:14px;padding:12px 14px}
+  .float.two{right:8px;bottom:14px;width:180px;padding:13px 15px}
+  .hero-photo{aspect-ratio:4/4}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hd">
+    <div class="logo"><span class="mk">НГ</span><span>Новый горизонт<small>сантехника · электрика · ремонт</small></span></div>
+    <nav>
+      <a href="#uslugi">Услуги</a>
+      <a href="#kak">Как работаем</a>
+      <a href="#raboty">Работы</a>
+      <a href="#garantii">Гарантии</a>
+      <a href="#zayavka">Контакты</a>
+    </nav>
+    <div class="hd-r">
+      <div class="hd-tel"><b>8 800 511-90-19</b><span>без выходных, 8:00 до 22:00</span></div>
+      <a class="btn sm" href="#zayavka">Вызвать мастера</a>
+      <div class="burger"><i></i><i></i><i></i></div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="chip"><i></i>Свободных мастеров сегодня: 4</span>
+      <h1>Мастер приедет <em>сегодня</em> и назовёт цену до начала работ</h1>
+      <p class="lead">Сантехника, электрика, отделка и ремонт под ключ в квартирах, домах и коммерческих помещениях. Работаем по договору с фиксированной сметой.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#zayavka">Вызвать мастера</a>
+        <a class="btn ghost" href="#uslugi">Цены на работы</a>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>от 1 часа</b><span>приезд по городу</span></div>
+        <div class="fact"><b>2 года</b><span>гарантия по договору</span></div>
+        <div class="fact"><b>9 видов</b><span>работ под одной крышей</span></div>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="hero-photo"><img src="img/hero.jpg" alt="Объект компании"></div>
+      <div class="float one">
+        <span class="ic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff5a1f" stroke-width="2" stroke-linecap="round"><path d="M12 7v5l3 2"/><circle cx="12" cy="12" r="9"/></svg>
+        </span>
+        <span><b>Выезд за 60 минут</b><span>по заявкам до 20:00</span></span>
+      </div>
+      <div class="float two">
+        <b>Смета не меняется</b>
+        <div class="bar"><i style="width:100%"></i></div>
+        <span>Сумма в договоре и в конце работ совпадает</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="strip">
+      <div class="st"><b>Сантехника</b><span>Трубы, приборы, устранение протечек</span></div>
+      <div class="st"><b>Электрика</b><span>Проводка, щиты, розетки, освещение</span></div>
+      <div class="st"><b>Мастер на час</b><span>Мелкий ремонт за один визит</span></div>
+      <div class="st"><b>Ремонт под ключ</b><span>Квартиры, дома, офисы</span></div>
+      <div class="st"><b>Приёмка квартир</b><span>Проверка перед подписанием акта</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="uslugi">
+  <div class="wrap">
+    <div class="sec-h">
+      <div>
+        <div class="eyebrow">Услуги и цены</div>
+        <h2>Берём задачи любого размера</h2>
+      </div>
+      <p>От подтекающего смесителя до полного ремонта дома с инженерией. Цену называем до начала работ и фиксируем в договоре.</p>
+    </div>
+    <div class="svc">
+      <div class="sv">
+        <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff5a1f" stroke-width="1.8" stroke-linecap="round"><path d="M7 3v6a3 3 0 0 0 3 3h1v9"/><path d="M4 3h6"/><path d="M17 8h4v4a3 3 0 0 1-3 3h-1"/></svg></span>
+        <h3>Сантехника</h3>
+        <p>Замена труб и стояков, установка ванн, душевых и смесителей, разводка воды, устранение протечек в день обращения.</p>
+        <div class="price">от 1 500 ₽ <small>за выезд с работой</small></div>
+      </div>
+      <div class="sv">
+        <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff5a1f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
+        <h3>Электрика</h3>
+        <p>Проводка с нуля, сборка щитов, розеточные группы, монтаж светильников, поиск причины, когда выбивает автомат.</p>
+        <div class="price">от 1 800 ₽ <small>за выезд с работой</small></div>
+      </div>
+      <div class="sv">
+        <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff5a1f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 1-5 5L4 17v3h3l5.7-5.7a4 4 0 0 1 5-5l-2.3 2.3 1.4 1.4 2.3-2.3"/></svg></span>
+        <h3>Мастер на час</h3>
+        <p>Повесить карниз, собрать мебель, поменять розетку, подключить технику. Несколько мелких задач за один визит.</p>
+        <div class="price">от 1 200 ₽ <small>за час работы</small></div>
+      </div>
+      <div class="sv">
+        <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff5a1f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5V20H3z"/><path d="M9 20v-6h6v6"/></svg></span>
+        <h3>Ремонт под ключ</h3>
+        <p>Квартиры, дома и офисы: от чернового этапа до чистовой отделки, с инженерией, графиком и приёмкой по этапам.</p>
+        <div class="price">от 6 500 ₽ <small>за м², по смете</small></div>
+      </div>
+      <div class="sv">
+        <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff5a1f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/><path d="M8.5 11h5M11 8.5v5"/></svg></span>
+        <h3>Приёмка квартиры</h3>
+        <p>Проверяем новостройку перед подписанием акта: стены, стяжка, окна, вентиляция, электрика. Отчёт с замечаниями.</p>
+        <div class="price">от 5 000 ₽ <small>за квартиру</small></div>
+      </div>
+      <div class="sv">
+        <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff5a1f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V9l8-5 8 5v11"/><path d="M4 20h16"/><path d="M10 20v-5h4v5"/><path d="M12 4V2"/></svg></span>
+        <h3>Отопление и котельные</h3>
+        <p>Монтаж котла и бойлера, обвязка, радиаторы, тёплый пол, обслуживание систем в частных домах.</p>
+        <div class="price">от 25 000 ₽ <small>за котельную</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="kak">
+  <div class="wrap">
+    <div class="sec-h">
+      <div>
+        <div class="eyebrow">Как работаем</div>
+        <h2>Четыре шага от звонка до сдачи</h2>
+      </div>
+      <p>Вы всегда знаете, что происходит на объекте и сколько это стоит. Без доплат по ходу работ.</p>
+    </div>
+    <div class="steps">
+      <div class="sp"><b class="num">1</b><h3>Заявка</h3><p>Перезваниваем за 15 минут, уточняем задачу и сразу говорим, на какую сумму ориентироваться.</p></div>
+      <div class="sp"><b class="num">2</b><h3>Выезд и смета</h3><p>Мастер приезжает, смотрит объект и составляет смету. Выезд по городу бесплатный.</p></div>
+      <div class="sp"><b class="num">3</b><h3>Договор и работа</h3><p>Фиксируем сроки и цену, выходим на объект. По крупным работам показываем промежуточные этапы.</p></div>
+      <div class="sp"><b class="num">4</b><h3>Сдача и гарантия</h3><p>Принимаете работу, получаете документы и гарантию на два года. Замечания правим бесплатно.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="raboty">
+  <div class="wrap">
+    <div class="sec-h">
+      <div>
+        <div class="eyebrow">Наши работы</div>
+        <h2>Объекты, которые мы сдали</h2>
+      </div>
+      <p>Квартиры, частные дома и коммерческие помещения. Подписи и сроки заполним вашими настоящими данными.</p>
+    </div>
+    <div class="works">
+      <a class="wk big" href="#"><img src="img/w1.jpg" alt=""><div class="ov"><span class="tag">Частный дом</span><h3>Дом 180 м² под ключ</h3><p>Отопление, водоснабжение, электрика и отделка. Три месяца от котлована до заселения</p></div></a>
+      <a class="wk" href="#"><img src="img/w2.jpg" alt=""><div class="ov"><span class="tag">Торговое</span><h3>Магазин в ТЦ</h3><p>Освещение зала и витрин, кассовая зона</p></div></a>
+      <a class="wk" href="#"><img src="img/w3.jpg" alt=""><div class="ov"><span class="tag">Офис</span><h3>Офис 210 м²</h3><p>Перегородки, вентиляция, свет</p></div></a>
+      <a class="wk" href="#"><img src="img/w4.jpg" alt=""><div class="ov"><span class="tag">Отопление</span><h3>Котельная в доме</h3><p>Котёл, бойлер, обвязка и радиаторы</p></div></a>
+      <a class="wk" href="#"><img src="img/w5.jpg" alt=""><div class="ov"><span class="tag">Частный дом</span><h3>Дом 140 м²</h3><p>Инженерия и подготовка под отделку</p></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="garantii">
+  <div class="trust">
+    <div>
+      <div class="eyebrow">Почему нам доверяют</div>
+      <h2>Отвечаем за результат, а не за потраченные часы</h2>
+      <p>Компания работает с 2015 года. За это время сдали объекты от замены смесителя до домов под ключ, и половина заявок сегодня приходит по рекомендациям.</p>
+      <div class="tl"><span class="ck">✓</span><span><b>Договор и фиксированная смета.</b> <span>Сумма, согласованная на старте, не меняется по ходу работ.</span></span></div>
+      <div class="tl"><span class="ck">✓</span><span><b>Гарантия 2 года.</b> <span>Если что-то пойдёт не так, возвращаемся и исправляем бесплатно.</span></span></div>
+      <div class="tl"><span class="ck">✓</span><span><b>Свои мастера, не подряд.</b> <span>Каждый объект ведёт бригада компании, а не случайные люди по объявлению.</span></span></div>
+      <div class="tl"><span class="ck">✓</span><span><b>Работаем без выходных.</b> <span>Аварийные заявки принимаем и в субботу, и в воскресенье.</span></span></div>
+    </div>
+    <div class="trust-media"><img src="img/trust.jpg" alt="Работы на объекте"></div>
+  </div>
+</section>
+
+<section class="wrap" id="zayavka">
+  <div class="cta">
+    <div>
+      <div class="eyebrow">Оставить заявку</div>
+      <h2>Расскажите задачу, посчитаем бесплатно</h2>
+      <p>Перезвоним в течение 15 минут, уточним детали и назовём стоимость. Если нужен выезд, мастер приедет в удобное время, по городу бесплатно.</p>
+      <div class="mini">
+        <div><b>15 минут</b><span>среднее время ответа</span></div>
+        <div><b>Бесплатно</b><span>выезд и расчёт сметы</span></div>
+      </div>
+    </div>
+    <div class="form">
+      <h3>Вызвать мастера</h3>
+      <p>Выберите, что нужно сделать, остальное уточним по телефону.</p>
+      <div class="pills"><span class="on">Сантехника</span><span>Электрика</span><span>Ремонт</span><span>Другое</span></div>
+      <div class="inp">Ваше имя</div>
+      <div class="inp">Телефон</div>
+      <button class="btn">Заказать звонок</button>
+      <div class="fine">Нажимая кнопку, вы соглашаетесь с политикой обработки данных</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div>
+        <div class="logo"><span class="mk">НГ</span><span>Новый горизонт<small>сантехника · электрика · ремонт</small></span></div>
+        <p>Инженерные работы и ремонт в квартирах, частных домах и коммерческих помещениях. Работаем по договору с гарантией.</p>
+      </div>
+      <div>
+        <h4>Услуги</h4>
+        <a href="#">Сантехника</a><a href="#">Электрика</a><a href="#">Мастер на час</a><a href="#">Ремонт под ключ</a>
+      </div>
+      <div>
+        <h4>Компания</h4>
+        <a href="#">О нас</a><a href="#">Наши работы</a><a href="#">Клиентам</a><a href="#">Личный кабинет</a>
+      </div>
+      <div>
+        <h4>Связаться</h4>
+        <span class="big">8 800 511-90-19</span>
+        <a href="#">Работаем без выходных, 8:00 до 22:00</a>
+        <a href="#zayavka" style="margin-top:14px"><span class="btn light sm">Заказать звонок</span></a>
+      </div>
+    </div>
+    <div class="ft-bot"><span>© 2026 Новый горизонт</span><span>Политика обработки персональных данных</span></div>
+  </div>
+</footer>
+
+<div class="mob-bar">
+  <a class="btn ghost" href="tel:88005119019" style="background:#fff">Позвонить</a>
+  <a class="btn" href="#zayavka">Оставить заявку</a>
+</div>
+
+<script>
+document.querySelectorAll('.pills span').forEach(s => s.addEventListener('click', () => {
+  s.parentNode.querySelectorAll('span').forEach(x => x.classList.remove('on'));
+  s.classList.add('on');
+}));
+</script>
+</body>
+</html>
