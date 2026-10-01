@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Новый первый экран для «Нового горизонта»</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ink:#111820;--accent:#f26522;--deep:#13304f;--line:#e5e9ee;--muted:#64748b}
+body{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;background:#eef1f5;color:var(--ink)}
+.page{max-width:1240px;margin:0 auto;padding:30px 24px 64px}
+.note{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:22px;font-size:14.5px;line-height:1.6;color:#44546a}
+.note b{color:var(--ink)}
+
+/* рамка браузера */
+.browser{border-radius:16px;overflow:hidden;box-shadow:0 18px 50px rgba(19,48,79,.16);border:1px solid #dde3ea;background:#fff;margin-bottom:34px}
+.bar{height:40px;background:#f2f5f8;border-bottom:1px solid #e4e9ef;display:flex;align-items:center;padding:0 16px;gap:7px}
+.bar i{width:11px;height:11px;border-radius:50%;background:#dfe5ec;display:block}
+.bar span{margin-left:14px;font-size:12.5px;color:#90a0b2}
+
+/* сам первый экран */
+.top{display:flex;align-items:center;justify-content:space-between;padding:16px 36px;border-bottom:1px solid var(--line);gap:20px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:11px;font-weight:700;font-size:19px;letter-spacing:-.01em}
+.logo .mark{width:36px;height:36px;border-radius:9px;background:var(--deep);display:flex;align-items:center;justify-content:center;color:#fff;font-size:17px}
+.logo small{display:block;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+.nav{display:flex;gap:22px;font-size:14.5px;color:#44546a}
+.tel{display:flex;align-items:center;gap:14px}
+.tel .num{font-size:19px;font-weight:700;letter-spacing:-.01em}
+.tel .num small{display:block;font-size:11.5px;font-weight:500;color:var(--muted)}
+.btn{background:var(--accent);color:#fff;font-size:14.5px;font-weight:600;padding:12px 20px;border-radius:9px;border:none;white-space:nowrap}
+.btn.ghost{background:#fff;color:var(--deep);border:1.5px solid #cfd8e3}
+
+.hero{display:grid;grid-template-columns:1fr 400px;gap:44px;padding:48px 36px 40px;align-items:start;background:linear-gradient(130deg,#f7f9fc 0%,#fff 48%)}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#1a6b3c;background:#e8f6ee;border:1px solid #cfead9;border-radius:30px;padding:7px 14px;margin-bottom:20px;font-weight:600}
+.badge i{width:7px;height:7px;border-radius:50%;background:#28a35e;display:block}
+h1{font-size:44px;line-height:1.1;letter-spacing:-.025em;font-weight:720;margin-bottom:16px}
+h1 em{font-style:normal;color:var(--accent)}
+.sub{font-size:17px;line-height:1.6;color:#4a5a6e;max-width:560px;margin-bottom:26px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}
+.cta .btn{font-size:15.5px;padding:15px 26px}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;border-top:1px solid var(--line);padding-top:24px}
+.tr .v{font-size:23px;font-weight:700;letter-spacing:-.02em;margin-bottom:3px}
+.tr .l{font-size:12.5px;color:var(--muted);line-height:1.4}
+
+.form{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 26px 24px;box-shadow:0 10px 30px rgba(19,48,79,.07)}
+.form h3{font-size:18px;font-weight:650;margin-bottom:7px}
+.form p{font-size:13.5px;color:var(--muted);line-height:1.5;margin-bottom:18px}
+.inp{border:1px solid #dde3ea;border-radius:10px;padding:13px 14px;font-size:14.5px;color:#8a97a8;margin-bottom:10px}
+.sel{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.sel span{font-size:13px;border:1px solid #dde3ea;border-radius:8px;padding:9px 12px;color:#44546a}
+.sel span.on{background:var(--deep);color:#fff;border-color:var(--deep)}
+.form .btn{width:100%;text-align:center;padding:14px;font-size:15px}
+.fine{font-size:11.5px;color:#9aa7b6;line-height:1.5;margin-top:11px;text-align:center}
+
+.svc{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line)}
+.sv{padding:22px 20px;border-right:1px solid var(--line);font-size:14px;line-height:1.45}
+.sv:last-child{border-right:none}
+.sv b{display:block;font-size:15px;font-weight:620;margin-bottom:5px}
+.sv span{color:var(--muted);font-size:13px}
+
+/* мобильный */
+.mob-wrap{display:grid;grid-template-columns:330px 1fr;gap:34px;align-items:start}
+.phone{border:10px solid #1b2430;border-radius:34px;overflow:hidden;background:#fff;box-shadow:0 18px 44px rgba(19,48,79,.18)}
+.m-top{display:flex;align-items:center;justify-content:space-between;padding:13px 15px;border-bottom:1px solid var(--line)}
+.m-logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px}
+.m-logo .mark{width:28px;height:28px;border-radius:7px;background:var(--deep);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px}
+.burger{width:22px;display:flex;flex-direction:column;gap:4px}
+.burger i{height:2px;background:#44546a;border-radius:2px;display:block}
+.m-hero{padding:22px 16px 18px}
+.m-hero h2{font-size:26px;line-height:1.14;letter-spacing:-.02em;margin-bottom:11px;font-weight:700}
+.m-hero h2 em{font-style:normal;color:var(--accent)}
+.m-hero p{font-size:14px;line-height:1.55;color:#4a5a6e;margin-bottom:16px}
+.m-hero .btn{width:100%;text-align:center;display:block;margin-bottom:9px;padding:14px}
+.m-tr{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px;border-top:1px solid var(--line)}
+.m-tr div{background:#f5f8fb;border-radius:10px;padding:12px}
+.m-tr .v{font-size:17px;font-weight:700}
+.m-tr .l{font-size:11.5px;color:var(--muted);line-height:1.35;margin-top:2px}
+.sticky{position:sticky;bottom:0;display:flex;gap:8px;padding:11px 14px;border-top:1px solid var(--line);background:#fff}
+.sticky .btn{flex:1;text-align:center;padding:13px}
+.callbtn{flex:1;text-align:center;padding:13px;border:1.5px solid var(--deep);color:var(--deep);border-radius:9px;font-weight:650;font-size:14.5px}
+
+.why{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px 30px}
+.why h3{font-size:18px;font-weight:650;margin-bottom:18px}
+.li{display:flex;gap:13px;padding:12px 0;border-bottom:1px solid #eef2f6;font-size:14.5px;line-height:1.55;color:#44546a}
+.li:last-child{border-bottom:none}
+.li b{color:var(--ink)}
+.n{flex-shrink:0;width:24px;height:24px;border-radius:7px;background:#f1f5f9;color:var(--deep);display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:700;margin-top:1px}
+.tail{margin-top:26px;font-size:13.5px;color:#64748b;line-height:1.6;text-align:center}
+
+@media(max-width:900px){
+ .page{padding:20px 14px 44px}
+ .hero{grid-template-columns:1fr;padding:30px 20px;gap:28px}
+ h1{font-size:30px}
+ .nav{display:none}
+ .svc{grid-template-columns:1fr 1fr}
+ .sv{border-bottom:1px solid var(--line)}
+ .mob-wrap{grid-template-columns:1fr}
+ .trust{grid-template-columns:1fr 1fr}
+ .top{padding:14px 20px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="note">
+    <b>Вариант нового первого экрана для novyi-gorizont.ru.</b> Это макет, он открывается в браузере и на телефоне, можно нажимать и смотреть вживую. Тексты и цифры подставлены для примера, заменим на ваши. Ниже тот же экран в мобильной версии и короткое пояснение, что и зачем изменено.
+  </div>
+
+  <div class="browser">
+    <div class="bar"><i></i><i></i><i></i><span>novyi-gorizont.ru</span></div>
+
+    <div class="top">
+      <div class="logo"><span class="mark">НГ</span><span>Новый горизонт<small>Сантехника · электрика · ремонт</small></span></div>
+      <div class="nav"><span>Услуги</span><span>Цены</span><span>Наши работы</span><span>Клиентам</span><span>Контакты</span></div>
+      <div class="tel">
+        <div class="num">8 800 511-90-19<small>без выходных, с 8:00 до 22:00</small></div>
+        <button class="btn">Вызвать мастера</button>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div>
+        <span class="badge"><i></i>Свободные мастера сегодня: 4</span>
+        <h1>Мастер приедет <em>сегодня</em> и назовёт цену до начала работ</h1>
+        <p class="sub">Сантехника, электрика, отделка и комплексный ремонт. Работаем по договору с фиксированной сметой: сумма в начале и в конце совпадает.</p>
+        <div class="cta">
+          <button class="btn">Вызвать мастера</button>
+          <button class="btn ghost">Рассчитать стоимость ремонта</button>
+        </div>
+        <div class="trust">
+          <div class="tr"><div class="v">от 1 часа</div><div class="l">приезд по городу</div></div>
+          <div class="tr"><div class="v">2 года</div><div class="l">гарантия по договору</div></div>
+          <div class="tr"><div class="v">9 видов</div><div class="l">работ под одной крышей</div></div>
+          <div class="tr"><div class="v">Без выходных</div><div class="l">приём заявок каждый день</div></div>
+        </div>
+      </div>
+
+      <div class="form">
+        <h3>Вызвать мастера</h3>
+        <p>Перезвоним в течение 15 минут, уточним задачу и назовём стоимость.</p>
+        <div class="sel"><span class="on">Сантехника</span><span>Электрика</span><span>Ремонт</span><span>Другое</span></div>
+        <div class="inp">Ваше имя</div>
+        <div class="inp">Телефон</div>
+        <button class="btn">Заказать звонок</button>
+        <div class="fine">Нажимая кнопку, вы соглашаетесь с политикой обработки данных</div>
+      </div>
+    </div>
+
+    <div class="svc">
+      <div class="sv"><b>Сантехника</b><span>Замена труб, установка приборов</span></div>
+      <div class="sv"><b>Электрика</b><span>Проводка, щиты, розетки</span></div>
+      <div class="sv"><b>Мастер на час</b><span>Мелкий ремонт за один визит</span></div>
+      <div class="sv"><b>Комплексный ремонт</b><span>Квартиры и офисы под ключ</span></div>
+      <div class="sv"><b>Приёмка квартир</b><span>Проверка перед подписанием акта</span></div>
+    </div>
+  </div>
+
+  <div class="mob-wrap">
+    <div class="phone">
+      <div class="m-top">
+        <div class="m-logo"><span class="mark">НГ</span>Новый горизонт</div>
+        <div class="burger"><i></i><i></i><i></i></div>
+      </div>
+      <div class="m-hero">
+        <h2>Мастер приедет <em>сегодня</em> и назовёт цену до начала работ</h2>
+        <p>Сантехника, электрика и ремонт по договору с фиксированной сметой.</p>
+        <button class="btn">Вызвать мастера</button>
+      </div>
+      <div class="m-tr">
+        <div><div class="v">от 1 часа</div><div class="l">приезд по городу</div></div>
+        <div><div class="v">2 года</div><div class="l">гарантия по договору</div></div>
+        <div><div class="v">9 видов</div><div class="l">работ под одной крышей</div></div>
+        <div><div class="v">Без выходных</div><div class="l">приём заявок</div></div>
+      </div>
+      <div class="sticky">
+        <div class="callbtn">Позвонить</div>
+        <button class="btn">Заявка</button>
+      </div>
+    </div>
+
+    <div class="why">
+      <h3>Что изменилось и зачем</h3>
+      <div class="li"><span class="n">1</span><span><b>Первый экран отвечает на главный вопрос.</b> Человек с протечкой ищет не описание компании, а когда приедет мастер и сколько это стоит. Заголовок говорит об этом сразу.</span></div>
+      <div class="li"><span class="n">2</span><span><b>Телефон закреплён в шапке и виден всегда.</b> Сейчас на телефоне до номера нужно прокручивать, а половина заявок в вашей нише это звонок в первые секунды.</span></div>
+      <div class="li"><span class="n">3</span><span><b>Форма заявки прямо в первом экране.</b> Не нужно искать её внизу страницы, заявку можно оставить сразу.</span></div>
+      <div class="li"><span class="n">4</span><span><b>Четыре короткие причины доверять.</b> Срок приезда, гарантия, объём работ и график, вместо общих слов о профессионализме.</span></div>
+      <div class="li"><span class="n">5</span><span><b>На телефоне внизу закреплены две кнопки.</b> Позвонить и оставить заявку доступны с любого места страницы.</span></div>
+      <div class="li"><span class="n">6</span><span><b>Услуги сразу под первым экраном.</b> Видно, что компания закрывает весь спектр, и человек не уходит искать отдельного электрика.</span></div>
+    </div>
+  </div>
+
+  <p class="tail">Цифры в макете условные: срок приезда, гарантию и количество мастеров поставим ваши реальные.</p>
+</div>
+</body>
+</html>
